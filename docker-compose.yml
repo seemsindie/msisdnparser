@@ -1,0 +1,15 @@
+app:
+  restart: 'always'
+  image: php:7
+  command: php -S 0.0.0.0:1337 /app/sources/index.php
+  ports:
+    - "1337:1337"
+  volumes:
+    - ./app:/app
+
+composer:
+  restart: 'no'
+  image: composer/composer:php7
+  command: install
+  volumes:
+    - ./app:/app
