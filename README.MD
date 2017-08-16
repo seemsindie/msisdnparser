@@ -1,7 +1,13 @@
-# How to run rcp server
+# To run rcp server
 
 ```sh
 $ docker-compose up
+```
+
+The RPC server will run on:
+
+```sh
+localhost:1337
 ```
 
 # Example POST request body
