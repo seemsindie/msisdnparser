@@ -10,6 +10,13 @@ The RPC server will run on:
 localhost:1337
 ```
 
+# To run tests
+
+```sh
+$ cd ./app
+$ phpunit
+```
+
 # Example POST request body
 
 ```json
