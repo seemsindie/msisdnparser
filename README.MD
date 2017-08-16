@@ -4,7 +4,7 @@
 $ docker-compose up
 ```
 
-# Example request
+# Example POST request body
 
 ```json
 {
