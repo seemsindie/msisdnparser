@@ -9,9 +9,13 @@ use libphonenumber\PhoneNumberUtil;
 
 class Parser
 {
+    // Not null in case of mobile number
     public $mno = null;
+
+    // Two letter country code (ISO 3166-1-alpha-2 standard)
     public $country = null;
-    public $countryDilingCode = null;
+
+    public $countryDialingCode = null;
     public $number = null;
     public $isValid = false;
 
@@ -24,6 +28,13 @@ class Parser
         $this->carrierMapperUtil = PhoneNumberToCarrierMapper::getInstance();
     }
 
+    /**
+     * Takes MSISDN as an input and parse it down to retrieve info about subscriber, carrier and country.
+     *
+     * @param string #number MSISDN number
+     *
+     * @return self
+     */
     public function parse(string $number)
     {
         try {
@@ -35,11 +46,10 @@ class Parser
 
         $this->isValid = $this->phoneNumberUtil->isValidNumber($phoneNumber);
 
-        if($this->isValid)
-        {
+        if ($this->isValid) {
             $this->number = $phoneNumber->getNationalNumber();
             $this->country = $this->phoneNumberUtil->getRegionCodeForNumber($phoneNumber);
-            $this->countryDilingCode = (int)$phoneNumber->getCountryCode();
+            $this->countryDialingCode = (int)$phoneNumber->getCountryCode();
             $this->mno = $this->carrierMapperUtil->getNameForNumber($phoneNumber, 'en_US');
         }
 

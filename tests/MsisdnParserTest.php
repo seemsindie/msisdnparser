@@ -11,7 +11,7 @@ class MsisdnParserTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(true, $results->isValid);
         $this->assertEquals(69667323, $results->number);
-        $this->assertEquals(381, $results->countryDilingCode);
+        $this->assertEquals(381, $results->countryDialingCode);
         $this->assertEquals("Telenor", $results->mno);
         $this->assertEquals("RS", $results->country);
     }
@@ -25,7 +25,7 @@ class MsisdnParserTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(true, $results->isValid);
         $this->assertEquals(6502530000, $results->number);
-        $this->assertEquals(1, $results->countryDilingCode);
+        $this->assertEquals(1, $results->countryDialingCode);
         $this->assertEquals(null, $results->mno);
         $this->assertEquals("US", $results->country);
     }
