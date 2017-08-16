@@ -24,7 +24,7 @@ class Parser
         $this->carrierMapperUtil = PhoneNumberToCarrierMapper::getInstance();
     }
 
-    public function parse($number)
+    public function parse(string $number)
     {
         try {
             $phoneNumber = $this->phoneNumberUtil->parse($number, null);
