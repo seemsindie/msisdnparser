@@ -11,5 +11,8 @@
     "require": {
         "giggsey/libphonenumber-for-php": "^8.7",
         "fguillot/json-rpc": "@stable"
+    },
+    "autoload": {
+        "psr-4": {"Msisdn\\": "sources/"}
     }
 }
